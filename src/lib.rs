@@ -20,10 +20,21 @@ impl Proxy {
         return &self.ip;
     }
 
+    /// This function returns a reference to the protocol string of a struct.
+    /// 
+    /// Returns:
+    /// 
+    /// The `protocol` method is returning a reference to a string (`&str`) which represents the
+    /// protocol of the object.
     pub fn protocol(&self) -> &str {
         return self.protocol.as_str();
     }
 
+    /// The function returns the port number as an unsigned 16-bit integer.
+    /// 
+    /// Returns:
+    /// 
+    /// The `port` field of the object that the method is called on, which is of type `u16`.
     pub fn port(&self) -> u16{
         return self.port;
     }
@@ -32,10 +43,22 @@ impl Proxy {
         return &self.username;
     }
 
+    /// This function returns a reference to the optional username string of a struct.
+    /// 
+    /// Returns:
+    /// 
+    /// A reference to an optional string (`&Option<String>`).
     pub fn password(&self) -> &Option<String> {
         return &self.password;
     }
 
+    /// This function returns a string representation of a network protocol scheme, IP address, and port
+    /// number.
+    /// 
+    /// Returns:
+    /// 
+    /// A string is being returned which is the concatenation of the protocol, IP address and port
+    /// number of the object instance. The format of the string is "{protocol}://{ip}:{port}".
     pub fn scheme(&self) -> String {
         return format!("{}://{}:{}", self.protocol, self.ip(), self.port);
     }

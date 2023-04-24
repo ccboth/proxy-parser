@@ -1,4 +1,7 @@
-# Proxy parser
+---
+license: MIT
+---
+# proxy-parser
 
 ## Technical Case
 
@@ -26,4 +29,21 @@ fn main_example() {
 
 ## Usage 
 
-иди нахуй
+Install using cargo from this repository. 
+
+### Simple
+
+```rust
+fn main() {
+    let proxies = proxy_parser::Proxy::parse_str("https://username:password@127.0.0.1:125\nhttps://username:password@127.0.0.1:124");
+    
+    assert_eq!(proxies.len(), 2);
+     
+    assert_eq!(proxies[0].port(), 125);
+    assert_eq!(proxies[0].scheme(), "https://127.0.0.1:125".to_string());
+  
+    assert_eq!(proxies[1].port(), 124);
+    assert_eq!(proxies[1].scheme(), "https://127.0.0.1:124".to_string());
+}
+```
+
