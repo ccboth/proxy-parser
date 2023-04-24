@@ -8,7 +8,7 @@ There is a file with an undefined name. Inside there are (or not) proxy server d
 # and without auth: protocol://ip:port
 http://127.0.0.12:80
 https://ernest:halimov@192.168.0.15:443
-socks5://tru:gigachad@127.0.11.4:1080
+socks5://true:gigachad@127.0.11.4:1080
 ```
 
 You need to parse the file. All data should be stored in memory, in a form convenient for transmission by the program.
