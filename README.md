@@ -1,6 +1,3 @@
----
-license: MIT
----
 # proxy-parser
 
 ## Technical Case
