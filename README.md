@@ -47,3 +47,6 @@ fn main() {
 }
 ```
 
+### P.S.
+
+Currently, there are only 4 versions of the IP parsing available, and only the format that was presented above.

@@ -1,6 +1,9 @@
 use std::str::FromStr;
 use std::net::IpAddr;
+use serde::Deserialize;
+use serde::Serialize;
 
+#[derive(Debug, Clone, Deserialize, Serialize)]
 pub struct Proxy {
     protocol: String,
     ip: IpAddr,
@@ -15,7 +18,7 @@ impl Proxy {
     /// 
     /// Returns:
     /// 
-    /// The `ip` field of the struct as a reference to an `IpAddr` object.
+    /// Proxy server address
     pub fn ip(&self) -> &IpAddr {
         return &self.ip;
     }
@@ -34,7 +37,7 @@ impl Proxy {
     /// 
     /// Returns:
     /// 
-    /// The `port` field of the object that the method is called on, which is of type `u16`.
+    /// Proxy server port
     pub fn port(&self) -> u16{
         return self.port;
     }
@@ -43,11 +46,9 @@ impl Proxy {
         return &self.username;
     }
 
-    /// This function returns a reference to the optional username string of a struct.
-    /// 
     /// Returns:
     /// 
-    /// A reference to an optional string (`&Option<String>`).
+    /// Password for simple proxy authentication.
     pub fn password(&self) -> &Option<String> {
         return &self.password;
     }
@@ -73,8 +74,7 @@ impl Proxy {
     /// 
     /// Returns:
     /// 
-    /// The function `parse_str` returns a `Vec<Self>`, which is a vector of the type that the function
-    /// is defined in.
+    /// A completed structure with proxy data.
     /// 
     /// # Example 
     /// ```
@@ -102,7 +102,6 @@ impl Proxy {
         }
         return result_proxies_array;
     }
-
 }
 
 impl FromStr for Proxy {
@@ -185,6 +184,7 @@ impl FromStr for Proxy {
 //         }
 //     }
 // }
+
 
 #[cfg(test)]
 mod tests {
